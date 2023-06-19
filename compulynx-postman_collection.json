@@ -1,0 +1,446 @@
+{
+	"info": {
+		"_postman_id": "433dea7b-3333-4581-8113-1065f59a1828",
+		"name": "compulynx-practical",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7313595"
+	},
+	"item": [
+		{
+			"name": "Customer Registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"customerId\": \"Cust1001\",\r\n  \"email\": \"user@gmail.com\",\r\n  \"firstName\": \"userFirst\",\r\n  \"lastName\": \"userLast\",\r\n  \"pin\": 1234\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9092/auth/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9092",
+					"path": [
+						"auth",
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"customerId\": \"Cust1001\",\r\n  \"pin\": 1234\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9092/auth/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9092",
+					"path": [
+						"auth",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Customers",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJDdXN0MTAwMSIsImlhdCI6MTY4NzEzNzMzMSwiZXhwIjoxNjg3MTM4MDUxfQ.XumZIRfuDOMxXX9IJAaEf5fbb5Oxtu67d3yRg-Haof11K7mbMqISYmjyAoALt_QfzClkmiOnlyoYdMreruPHIw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9092/auth/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9092",
+					"path": [
+						"auth",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Accounts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJDdXN0MTAwMSIsImlhdCI6MTY4NzEzNzMzMSwiZXhwIjoxNjg3MTM4MDUxfQ.XumZIRfuDOMxXX9IJAaEf5fbb5Oxtu67d3yRg-Haof11K7mbMqISYmjyAoALt_QfzClkmiOnlyoYdMreruPHIw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9092/accounts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9092",
+					"path": [
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Account",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJDdXN0MTAwMSIsImlhdCI6MTY4NzEzNzMzMSwiZXhwIjoxNjg3MTM4MDUxfQ.XumZIRfuDOMxXX9IJAaEf5fbb5Oxtu67d3yRg-Haof11K7mbMqISYmjyAoALt_QfzClkmiOnlyoYdMreruPHIw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9092/accounts/account/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9092",
+					"path": [
+						"accounts",
+						"account",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Account Balance",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJDdXN0MTAwMSIsImlhdCI6MTY4NzEzNzMzMSwiZXhwIjoxNjg3MTM4MDUxfQ.XumZIRfuDOMxXX9IJAaEf5fbb5Oxtu67d3yRg-Haof11K7mbMqISYmjyAoALt_QfzClkmiOnlyoYdMreruPHIw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9092/accounts/balance/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9092",
+					"path": [
+						"accounts",
+						"balance",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Account",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJDdXN0MTAwMSIsImlhdCI6MTY4NzEzNzMzMSwiZXhwIjoxNjg3MTM4MDUxfQ.XumZIRfuDOMxXX9IJAaEf5fbb5Oxtu67d3yRg-Haof11K7mbMqISYmjyAoALt_QfzClkmiOnlyoYdMreruPHIw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"customerId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9092/accounts/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9092",
+					"path": [
+						"accounts",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deposit Funds",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJDdXN0MTAwMSIsImlhdCI6MTY4NzEzNzMzMSwiZXhwIjoxNjg3MTM4MDUxfQ.XumZIRfuDOMxXX9IJAaEf5fbb5Oxtu67d3yRg-Haof11K7mbMqISYmjyAoALt_QfzClkmiOnlyoYdMreruPHIw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"amount\": 100,\r\n  \"userId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9092/accounts/deposit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9092",
+					"path": [
+						"accounts",
+						"deposit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transfer Funds",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJDdXN0MTAwMSIsImlhdCI6MTY4NzEzNzMzMSwiZXhwIjoxNjg3MTM4MDUxfQ.XumZIRfuDOMxXX9IJAaEf5fbb5Oxtu67d3yRg-Haof11K7mbMqISYmjyAoALt_QfzClkmiOnlyoYdMreruPHIw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"amount\": 20,\r\n  \"customerId\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9092/accounts/transfer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9092",
+					"path": [
+						"accounts",
+						"transfer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Withdraw Funds",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJDdXN0MTAwMSIsImlhdCI6MTY4NzEzNzMzMSwiZXhwIjoxNjg3MTM4MDUxfQ.XumZIRfuDOMxXX9IJAaEf5fbb5Oxtu67d3yRg-Haof11K7mbMqISYmjyAoALt_QfzClkmiOnlyoYdMreruPHIw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"amount\": 30,\r\n  \"userId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9092/accounts/withdraw",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9092",
+					"path": [
+						"accounts",
+						"withdraw"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Transactions",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJDdXN0MTAwMSIsImlhdCI6MTY4NzEzNzMzMSwiZXhwIjoxNjg3MTM4MDUxfQ.XumZIRfuDOMxXX9IJAaEf5fbb5Oxtu67d3yRg-Haof11K7mbMqISYmjyAoALt_QfzClkmiOnlyoYdMreruPHIw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9092/transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9092",
+					"path": [
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transaction by ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJDdXN0MTAwMSIsImlhdCI6MTY4NzEzNzMzMSwiZXhwIjoxNjg3MTM4MDUxfQ.XumZIRfuDOMxXX9IJAaEf5fbb5Oxtu67d3yRg-Haof11K7mbMqISYmjyAoALt_QfzClkmiOnlyoYdMreruPHIw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9092/transactions/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9092",
+					"path": [
+						"transactions",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mini Statement",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJDdXN0MTAwMSIsImlhdCI6MTY4NzEzNzMzMSwiZXhwIjoxNjg3MTM4MDUxfQ.XumZIRfuDOMxXX9IJAaEf5fbb5Oxtu67d3yRg-Haof11K7mbMqISYmjyAoALt_QfzClkmiOnlyoYdMreruPHIw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9092/transactions/statement/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9092",
+					"path": [
+						"transactions",
+						"statement",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
