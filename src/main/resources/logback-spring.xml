@@ -1,0 +1,41 @@
+<configuration>
+    <property name="LOG_PATH" value="C:/var/log/applications/API/logs" />
+    <property name="REQUEST_LOG_FILE" value="${LOG_PATH}/request.log" />
+    <property name="RESPONSE_LOG_FILE" value="${LOG_PATH}/response.log" />
+
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+
+    <appender name="REQUEST_LOG" class="ch.qos.logback.core.FileAppender">
+        <file>${REQUEST_LOG_FILE}</file>
+        <append>true</append>
+        <encoder>
+            <pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <logger name="org.springframework.web" level="DEBUG" additivity="false">
+        <appender-ref ref="REQUEST_LOG" />
+    </logger>
+
+
+    <appender name="RESPONSE_LOG" class="ch.qos.logback.core.FileAppender">
+        <file>${RESPONSE_LOG_FILE}</file>
+        <append>true</append>
+        <encoder>
+            <pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <logger name="org.springframework.web.servlet.mvc.method.annotation" level="DEBUG" additivity="false">
+        <appender-ref ref="RESPONSE_LOG" />
+    </logger>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE" />
+    </root>
+
+</configuration>
